@@ -1,0 +1,5 @@
+com\prime\enquiry\mail\EmailContentProcessorImpl.class
+com\prime\enquiry\mail\PrimeMailService.class
+com\prime\enquiry\controller\EnquiryController.class
+com\prime\enquiry\mail\PrimeMailServiceImpl.class
+com\prime\enquiry\mail\EmailContentProcessor.class
