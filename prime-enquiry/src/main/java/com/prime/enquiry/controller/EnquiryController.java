@@ -2,6 +2,7 @@ package com.prime.enquiry.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,11 +13,16 @@ import com.nriprime.beans.mail.Mail;
 import com.prime.enquiry.mail.EmailContentProcessor;
 import com.prime.enquiry.mail.PrimeMailService;
 import com.prime.enquiry.props.EmailProperties;
+import static com.prime.enquiry.constants.EnquiryConstants.APPLICATION_JSON;
+import static com.prime.enquiry.constants.EnquiryConstants.APPLICATION_XML;
+import static com.prime.enquiry.constants.EnquiryConstants.APPLICATION_TEXT_HTML;;
+
 
 @RestController
 @RequestMapping(path="/enquiry")
 
 public class EnquiryController {
+	@SuppressWarnings("rawtypes")
 	@Autowired
 	private EmailContentProcessor emailContentProcessor;
 	@Autowired
@@ -24,7 +30,8 @@ public class EnquiryController {
 	@Autowired
 	private PrimeMailService primeMailService;
 	
-	@RequestMapping(path="/automobile",method=RequestMethod.POST,consumes = {"application/json", "application/xml"},produces={"text/html"})
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@RequestMapping(path="/automobile",method=RequestMethod.POST,consumes = {APPLICATION_JSON,APPLICATION_XML},produces={APPLICATION_TEXT_HTML})
 	public ResponseEntity automobileEnquiry(@RequestBody Automobile automobile){
 		Mail mail=new Mail();
 		mail.setSubject("Automobile Enquiry");
@@ -33,7 +40,11 @@ public class EnquiryController {
 		mail.setCc(emailProps.getCcList());
 		mail.setBcc(emailProps.getBccList());
 		mail.setReplyTo(emailProps.getReplyTo());
-		mail.setText(emailContentProcessor.processAutomobileContent(automobile));
+		if(!StringUtils.isEmpty(automobile.getAddress())){
+			String address = automobile.getAddress().replaceAll("\n", "<br>");
+			automobile.setAddress(address);
+		}
+		mail.setText(emailContentProcessor.processContent(automobile));
 		System.out.println(mail);
 		return ResponseEntity.ok(primeMailService.sendMail(mail));
 		

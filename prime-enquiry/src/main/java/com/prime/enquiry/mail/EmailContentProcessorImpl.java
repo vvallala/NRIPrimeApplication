@@ -11,27 +11,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nriprime.beans.enquiry.Automobile;
 import com.prime.enquiry.props.ApplicationProperties;
 
 @Service
-public class EmailContentProcessorImpl implements EmailContentProcessor{
+public class EmailContentProcessorImpl<T> implements EmailContentProcessor<T>{
 	@Autowired
 	private ApplicationProperties applicationProperties;
 
 	@Autowired
 	private VelocityEngine velocityEngine;
 
+	
+
 	@Override
-	public String processAutomobileContent(Automobile automobile) {
-		if(!StringUtils.isEmpty(automobile.getAddress())){
-			String address = automobile.getAddress();
-			address=address.replaceAll("\\n", "<br>");
-			automobile.setAddress(address);
-		}
+	public String processContent(T t) {
 		VelocityContext ctx=new VelocityContext();
 		ObjectMapper mapper=new ObjectMapper();
-		LinkedHashMap autoMobileMap = (LinkedHashMap) mapper.convertValue(automobile, LinkedHashMap.class);
+		LinkedHashMap autoMobileMap = (LinkedHashMap) mapper.convertValue(t, LinkedHashMap.class);
 		ctx.put("person", "Vijay the great!!!");
 		ctx.put("map", autoMobileMap);
 		ctx.put("utils", new StringUtils());
@@ -42,4 +38,5 @@ public class EmailContentProcessorImpl implements EmailContentProcessor{
 		velocityEngine.mergeTemplate(applicationProperties.getTemplatePath()+applicationProperties.getTemplateName(), ctx, writer);
 		return writer.toString();
 	}
+	
 }
