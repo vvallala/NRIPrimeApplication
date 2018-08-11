@@ -8,14 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
+import com.nri.megamart.beans.Advertisement;
+import com.nri.megamart.beans.NRIPrime;
 import com.nri.megamart.manager.FileManager;
 import com.nri.megamart.props.ApplicationProperties;
 import com.nri.megamart.security.MegaMartSecurityConfig;
 import com.nri.megamart.security.MegamartAccessDeniedHandler;
-import com.nriprime.beans.Advertisement;
-import com.nriprime.beans.NRIPrime;
 
 @Configuration
 public class MegamartAppInitializer {
@@ -103,5 +104,11 @@ public class MegamartAppInitializer {
 		return add;
 
 	}
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		return bCryptPasswordEncoder;
+	}
+	
 
 }

@@ -1,6 +1,6 @@
 package com.nriprime.beans.enquiry;
 
-public class ITServices {
+public class ITServices  extends Enquiry{
 	private String orgName;
 	private String naturOfBiz;
 	private String reqType;

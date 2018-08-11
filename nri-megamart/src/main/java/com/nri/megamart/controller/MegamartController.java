@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nri.megamart.beans.Advertisement;
+import com.nri.megamart.beans.NRIPrime;
 import com.nri.megamart.manager.FileManager;
-import com.nriprime.beans.Advertisement;
-import com.nriprime.beans.NRIPrime;
 import com.nriprime.beans.wrappers.AdvertisementBannerWrapper;
 import com.nriprime.beans.wrappers.PrimeBannerWrapper;
 
@@ -152,6 +152,14 @@ public class MegamartController {
 	 	@GetMapping("/403")
 	    public ModelAndView error403() {
 	        return new ModelAndView("403");
+	    }
+	 	@GetMapping("/header")
+	    public ModelAndView header() {
+	        return new ModelAndView("header");
+	    }
+	 	@GetMapping("/footer")
+	    public ModelAndView footer() {
+	        return new ModelAndView("footer");
 	    }
 	 	
 }

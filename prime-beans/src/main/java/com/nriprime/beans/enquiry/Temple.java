@@ -1,6 +1,6 @@
 package com.nriprime.beans.enquiry;
 
-public class Temple {
+public class Temple extends Enquiry{
 
 	private String name;
 	private String country;

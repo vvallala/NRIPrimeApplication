@@ -1,4 +1,4 @@
-package com.nriprime.beans;
+package com.nri.megamart.beans;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,11 +8,17 @@ import java.io.Serializable;
 
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.nri.megamart.props.ApplicationProperties;
+
 public class NRIPrime implements Serializable {
 
 	/**
 	 * 
 	 */
+	@Autowired
+	private transient ApplicationProperties applicationProperties;
 	private static final long serialVersionUID = 1L;
 
 	private String giftText = "GIFT";
@@ -133,10 +139,11 @@ public class NRIPrime implements Serializable {
 		return "NRIPrime [giftText=" + giftText + ", travelAndCourier=" + travelAndCourier + ", jewellery=" + jewellery
 				+ ", events=" + events + ", printing=" + printing + ", marketPlace=" + marketPlace + "]";
 	}
-
+	
+	
 	@PreDestroy
 	public void save() {
-		File file = new File("E://eclipserepo//SpringBootSpringMVC//src//main//resources//static//img//nriprime.ser");
+		File file = new File(applicationProperties.getBannerPath() + "nriprime.ser");
 
 		try {
 			if (!file.exists()) {
@@ -155,4 +162,5 @@ public class NRIPrime implements Serializable {
 			e.printStackTrace();
 		}
 	}
+	
 }

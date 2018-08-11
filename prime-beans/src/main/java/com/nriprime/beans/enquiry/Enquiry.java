@@ -57,5 +57,11 @@ public class Enquiry {
 	public void setType(String type) {
 		this.type = type;
 	}
+	@Override
+	public String toString() {
+		return "Enquiry [type=" + type + ", deliveryDate=" + deliveryDate + ", personName=" + personName
+				+ ", phoneNumber=" + phoneNumber + ", emailAddress=" + emailAddress + ", specialInstructions="
+				+ specialInstructions + ", picBase64=" + picBase64 + ", address=" + address + "]";
+	}
 	
 }

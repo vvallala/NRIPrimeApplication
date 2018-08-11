@@ -1,6 +1,6 @@
 package com.nriprime.beans.enquiry;
 
-public class Printing {
+public class Printing extends Enquiry{
 
 	private String type;
 	private Boolean design;

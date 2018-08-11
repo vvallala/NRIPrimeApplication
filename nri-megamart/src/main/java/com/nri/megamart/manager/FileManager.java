@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nri.megamart.beans.Advertisement;
+import com.nri.megamart.beans.NRIPrime;
 import com.nri.megamart.props.ApplicationProperties;
-import com.nriprime.beans.Advertisement;
-import com.nriprime.beans.NRIPrime;
 import com.nriprime.beans.banner.AdvertisementBanner;
 import com.nriprime.beans.banner.PrimeBanner;
 import com.nriprime.beans.wrappers.PrimeBannerWrapper;
@@ -173,5 +173,8 @@ public class FileManager {
 		}
 		return null;
 	}
-
+	
+	public void save(NRIPrime prime,Advertisement advertisement){
+		
+	}
 }

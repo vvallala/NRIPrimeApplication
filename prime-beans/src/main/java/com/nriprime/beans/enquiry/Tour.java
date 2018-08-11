@@ -1,6 +1,6 @@
 package com.nriprime.beans.enquiry;
 
-public class Tour {
+public class Tour extends Enquiry{
 
 	private String travel;
 	private String noOfPeople;

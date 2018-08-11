@@ -19,6 +19,12 @@ public String getMakeAndModel() {
 public void setMakeAndModel(String makeAndModel) {
 	this.makeAndModel = makeAndModel;
 }
+@Override
+public String toString() {
+	return "Automobile [vehicleType=" + vehicleType + ", makeAndModel=" + makeAndModel+"]" 
+			+ super.toString() + "]";
+}
+
 
 
 }
