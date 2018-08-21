@@ -80,7 +80,6 @@
 	<modules>
 		<module>prime-enquiry</module>
 		<module>prime-beans</module>
-		<module>prime-properties</module>
 		<module>nri-megamart</module>
 	</modules>
 </project>
