@@ -1,14 +1,20 @@
 package com.nriprime.beans.enquiry;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Enquiry {
 	private String type;
 	private String deliveryDate;
 	private String personName;
 	private String phoneNumber;
+	@JsonProperty(value="emailAddress")
 	private String emailAddress;
 	private String specialInstructions;
 	private String picBase64;
 	private String address;
+	private MultipartFile pic;
 	public String getDeliveryDate() {
 		return deliveryDate;
 	}
@@ -56,6 +62,14 @@ public class Enquiry {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	
+	public MultipartFile getPic() {
+		return pic;
+	}
+	public void setPic(MultipartFile pic) {
+		this.pic = pic;
 	}
 	@Override
 	public String toString() {

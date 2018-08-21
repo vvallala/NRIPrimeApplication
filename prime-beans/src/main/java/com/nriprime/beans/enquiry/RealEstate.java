@@ -7,6 +7,14 @@ public class RealEstate extends Enquiry{
 	private String paymentType;
 	private String budget;
 	private String purchaseDate;
+	private String addressType;
+	
+	public String getAddressType() {
+		return addressType;
+	}
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
 	public String getPurpose() {
 		return purpose;
 	}

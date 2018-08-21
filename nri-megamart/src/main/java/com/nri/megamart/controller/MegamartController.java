@@ -60,7 +60,7 @@ public class MegamartController {
 
 	@GetMapping("/enquiry")
 	public ModelAndView enquiry(Model model) {
-		return new ModelAndView("enquiry");
+		return new ModelAndView("/enquiry/enquiry");
 	}
 
 	@GetMapping("/megamart")

@@ -9,10 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.nriprime.beans.enquiry.Advertisement;
 import com.nriprime.beans.enquiry.Automobile;
@@ -57,17 +60,29 @@ public class EnquiryController {
 	private PrimeMailService primeMailService;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@RequestMapping(path="/automobile",method=RequestMethod.POST,consumes = {APPLICATION_JSON,APPLICATION_XML},produces={APPLICATION_TEXT_HTML})
-	public ResponseEntity automobileEnquiry(@RequestBody Automobile automobile){
+	@PostMapping("/automobile")
+	public ResponseEntity  automobileEnquiry(@ModelAttribute("automobile") Automobile automobile){
 		logger.info("processing automobile enquiry request  "+automobile.toString());
 		Mail mail=getMail("Automobile Enquiiry",automobile.getEmailAddress());
 		automobile.setAddress(getAddress(automobile.getAddress()));
 		mail.setText(emailContentProcessor.processContent(automobile));
-		return ResponseEntity.ok(primeMailService.sendMail(mail));
+		primeMailService.sendMail(mail);
+		return ResponseEntity.ok("success");
+		//return new RedirectView("http://localhost:8080/nriprime/enquiry");
 		
 	}
+//	@SuppressWarnings({ "unchecked", "rawtypes" })
+//	@RequestMapping(path="/automobile",method=RequestMethod.POST,consumes = {APPLICATION_JSON,APPLICATION_XML},produces={APPLICATION_TEXT_HTML})
+//	public ResponseEntity automobileEnquiry(@RequestBody Automobile automobile){
+//		logger.info("processing automobile enquiry request  "+automobile.toString());
+//		Mail mail=getMail("Automobile Enquiiry",automobile.getEmailAddress());
+//		automobile.setAddress(getAddress(automobile.getAddress()));
+//		mail.setText(emailContentProcessor.processContent(automobile));
+//		return ResponseEntity.ok(primeMailService.sendMail(mail));
+//		
+//	}
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@RequestMapping(path="/womensTailoring",method=RequestMethod.POST,consumes = {APPLICATION_JSON,APPLICATION_XML},produces={APPLICATION_TEXT_HTML})
+	@PostMapping("/womensTailoring")
 	public ResponseEntity womensTailoring(@RequestBody WomensTailoring womensTailoring){
 		logger.info("processing womens tailoring enquiry request  "+womensTailoring);
 		Mail mail=getMail("Womens Tailoring Enquiiry",womensTailoring.getEmailAddress());

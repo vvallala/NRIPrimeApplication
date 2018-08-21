@@ -7,6 +7,16 @@ public class ITServices  extends Enquiry{
 	private String about;
 	private String budget;
 	private String desc;
+	private String location;
+	
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
 	public String getOrgName() {
 		return orgName;

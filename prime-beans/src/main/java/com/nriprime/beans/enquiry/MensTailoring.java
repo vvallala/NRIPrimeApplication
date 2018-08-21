@@ -3,6 +3,7 @@ package com.nriprime.beans.enquiry;
 public class MensTailoring extends Enquiry{
 
 	private String garnmentType;
+	private String otherGarnmentType;
 	private String expectedDeliveryDate;
 	private String neckMeasurment;
 	private String fullChest;
@@ -25,6 +26,13 @@ public class MensTailoring extends Enquiry{
 	private String thighMeasurment;
 	private String kneeMeasurment;
 
+	
+	public String getOtherGarnmentType() {
+		return otherGarnmentType;
+	}
+	public void setOtherGarnmentType(String otherGarnmentType) {
+		this.otherGarnmentType = otherGarnmentType;
+	}
 	public String getNeckMeasurment() {
 		return neckMeasurment;
 	}

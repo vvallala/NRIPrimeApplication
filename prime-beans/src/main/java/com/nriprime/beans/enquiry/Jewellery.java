@@ -4,6 +4,14 @@ public class Jewellery extends Enquiry{
 
 	private String weight;
 	private String budget;
+	private String deliveryPlace;
+	
+	public String getDeliveryPlace() {
+		return deliveryPlace;
+	}
+	public void setDeliveryPlace(String deliveryPlace) {
+		this.deliveryPlace = deliveryPlace;
+	}
 	public String getWeight() {
 		return weight;
 	}

@@ -5,6 +5,7 @@ public class Printing extends Enquiry{
 	private String type;
 	private Boolean design;
 	private String typeOfJob;
+	private String addressType;
 	
 	public String getType() {
 		return type;
@@ -23,6 +24,13 @@ public class Printing extends Enquiry{
 	}
 	public void setTypeOfJob(String typeOfJob) {
 		this.typeOfJob = typeOfJob;
+	}
+	
+	public String getAddressType() {
+		return addressType;
+	}
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
 	}
 	@Override
 	public String toString() {

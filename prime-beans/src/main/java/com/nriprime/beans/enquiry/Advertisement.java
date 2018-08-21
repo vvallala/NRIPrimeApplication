@@ -4,9 +4,18 @@ public class Advertisement extends Enquiry{
 
 	private String name;
 	private String natureOfBiz;
-	private String type;
 	private String pickUpDate;
 	private Boolean desingHelp;
+	private String advertiseAt;
+	
+	
+	public String getAdvertiseAt() {
+		return advertiseAt;
+	}
+
+	public void setAdvertiseAt(String advertiseAt) {
+		this.advertiseAt = advertiseAt;
+	}
 
 	public String getName() {
 		return name;
@@ -24,13 +33,7 @@ public class Advertisement extends Enquiry{
 		this.natureOfBiz = natureOfBiz;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 
 	public String getPickUpDate() {
 		return pickUpDate;
@@ -50,7 +53,7 @@ public class Advertisement extends Enquiry{
 
 	@Override
 	public String toString() {
-		return "Advertisement [name=" + name + ", natureOfBiz=" + natureOfBiz + ", type=" + type + ", pickUpDate="
+		return "Advertisement [name=" + name + ", natureOfBiz=" + natureOfBiz +  ", pickUpDate="
 				+ pickUpDate + ", desingHelp=" + desingHelp + "]";
 	}
 	

@@ -2,14 +2,23 @@ package com.nriprime.beans.enquiry;
 
 public class VRNRI extends Enquiry{
 
-	private String name;
+	private String companyName;
 	private String country;
 	private String city;
-	public String getName() {
-		return name;
+	private String description;
+	
+	public String getDescription() {
+		return description;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 	public String getCountry() {
 		return country;
@@ -25,7 +34,7 @@ public class VRNRI extends Enquiry{
 	}
 	@Override
 	public String toString() {
-		return "VRNRI [name=" + name + ", country=" + country + ", city=" + city + "]";
+		return "VRNRI [name=" + companyName + ", country=" + country + ", city=" + city + "]";
 	}
 	
 }

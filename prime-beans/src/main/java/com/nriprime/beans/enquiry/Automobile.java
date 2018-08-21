@@ -1,11 +1,14 @@
 package com.nriprime.beans.enquiry;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({ "vehicleType", "makeAndModel", "deliveryDate", "personName", "phoneNumber","emailAddress","specialInstructions","address" })
 
 public class Automobile extends Enquiry{
+	@JsonProperty(value="")
 private String vehicleType;
+	@JsonProperty(value="makeAndModel")
 private String makeAndModel;
 public String getVehicleType() {
 	return vehicleType;

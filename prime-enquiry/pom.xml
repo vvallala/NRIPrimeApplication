@@ -25,7 +25,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.nirprime.beans</groupId>
+			<groupId>com.nriprime.beans</groupId>
 			<artifactId>prime-beans</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

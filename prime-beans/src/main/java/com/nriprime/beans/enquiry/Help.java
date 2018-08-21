@@ -4,7 +4,15 @@ public class Help extends Enquiry{
 private String arrivalDate;
 private String departureDate;
 private String stayDuration;
-private String type;
+private String typeOfHelp;
+private String addressType;
+
+public String getAddressType() {
+	return addressType;
+}
+public void setAddressType(String addressType) {
+	this.addressType = addressType;
+}
 public String getArrivalDate() {
 	return arrivalDate;
 }
@@ -23,11 +31,12 @@ public String getStayDuration() {
 public void setStayDuration(String stayDuration) {
 	this.stayDuration = stayDuration;
 }
-public String getType() {
-	return type;
+public String getTypeOfHelp() {
+	return typeOfHelp;
 }
-public void setType(String type) {
-	this.type = type;
+public void setTypeOfHelp(String typeOfHelp) {
+	this.typeOfHelp = typeOfHelp;
 }
+
 
 }

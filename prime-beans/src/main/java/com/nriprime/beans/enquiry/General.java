@@ -2,31 +2,30 @@ package com.nriprime.beans.enquiry;
 
 public class General extends Enquiry{
 
-	private String type;
 	private String typesOfHelp;
-	private String purpose;
-	public String getType() {
-		return type;
+	private String priority;
+	private String message;
+	
+	public String getMessage() {
+		return message;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+	
 	public String getTypesOfHelp() {
 		return typesOfHelp;
 	}
 	public void setTypesOfHelp(String typesOfHelp) {
 		this.typesOfHelp = typesOfHelp;
 	}
-	public String getPurpose() {
-		return purpose;
+	public String getPriority() {
+		return priority;
 	}
-	public void setPurpose(String purpose) {
-		this.purpose = purpose;
+	public void setPriority(String priority) {
+		this.priority = priority;
 	}
 	
-	@Override
-	public String toString() {
-		return "General [type=" + type + ", typesOfHelp=" + typesOfHelp + ", purpose=" + purpose + "]";
-	}
+	
 	
 }

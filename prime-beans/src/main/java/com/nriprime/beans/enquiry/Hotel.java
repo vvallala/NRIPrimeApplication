@@ -8,6 +8,21 @@ public class Hotel extends Enquiry {
 	private String checkInDate;
 	private String checkOutDate;
 	private String budget;
+	private String notes;
+	private String addressType;
+	
+	public String getAddressType() {
+		return addressType;
+	}
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
+	public String getNotes() {
+		return notes;
+	}
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 	public String getType() {
 		return type;
 	}
