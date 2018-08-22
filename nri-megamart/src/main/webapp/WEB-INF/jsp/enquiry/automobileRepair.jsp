@@ -10,7 +10,7 @@
 		<div class="modal-dialog large_mdel">
 			<!-- Modal content-->
 			<div class="modal-content large_mdel_cntent">
-				<form action="/nriprime/enquiry/automobileRepair" method="post" name="automobileRepair">
+				<form action="/nriprime/enquiry/automobileRepair" method="post" name="automobileRepair" enctype="multipart/form-data" >
 					<button type="button" class="close popup_close"
 						data-dismiss="modal">
 						<img src="images/close.png">
@@ -54,7 +54,7 @@
 									Example Images</p>
 								<div class="tailor_group contest_upload margin_content">
 									<div class="col-xs-12 col-sm-12 ">
-										<input name="pic" id="repair" type="file" multiple />
+										<input name="pic" id="repair" type="file"  />
 										<output id="enquiry" />
 									</div>
 								</div>

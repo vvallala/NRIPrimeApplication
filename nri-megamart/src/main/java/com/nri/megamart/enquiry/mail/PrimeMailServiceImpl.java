@@ -1,10 +1,14 @@
 package com.nri.megamart.enquiry.mail;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamSource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
@@ -26,7 +30,16 @@ public class PrimeMailServiceImpl implements PrimeMailService {
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
 			helper.setTo(mail.getTo());
 			helper.setSubject(mail.getSubject());
-			message.setContent(mail.getText(), "text/html");
+			if(null!=mail.getAttachment() && mail.getAttachment().getBytes().length>0){
+				helper.addAttachment(mail.getAttachment().getOriginalFilename(), new InputStreamSource() {
+                     
+                     @Override
+                     public InputStream getInputStream() throws IOException {
+                         return mail.getAttachment().getInputStream();
+                     }
+                 });
+             }
+			helper.setText(mail.getText(),true);
 			javaMailSender.send(message);
 			sendReply(mail);
 			logger.info(mail.getSubject()+" sent successfully");

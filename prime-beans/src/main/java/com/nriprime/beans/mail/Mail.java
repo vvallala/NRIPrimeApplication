@@ -1,6 +1,9 @@
 package com.nriprime.beans.mail;
 
+import java.io.File;
 import java.util.Arrays;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class Mail {
 	
@@ -11,6 +14,14 @@ public class Mail {
 	private String subject;
 	private String text;
 	private String replyTo;
+	private MultipartFile attachment;
+	
+	public MultipartFile getAttachment() {
+		return attachment;
+	}
+	public void setAttachment(MultipartFile attachment) {
+		this.attachment = attachment;
+	}
 	public String getTo() {
 		return to;
 	}
