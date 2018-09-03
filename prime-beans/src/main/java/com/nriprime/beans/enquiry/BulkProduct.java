@@ -1,9 +1,14 @@
 package com.nriprime.beans.enquiry;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class BulkProduct extends Enquiry{
 
+	@JsonProperty(value="Occassion")
 	private String occassion;
+	@JsonProperty(value="Details Of Product")
 	private String details;
+	
 	public String getOccassion() {
 		return occassion;
 	}

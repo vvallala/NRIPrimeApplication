@@ -1,29 +1,52 @@
 package com.nriprime.beans.enquiry;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MensTailoring extends Enquiry{
 
+	@JsonProperty(value="Garnment Type")
 	private String garnmentType;
+	@JsonProperty(value="Other Garnment Type")
 	private String otherGarnmentType;
-	private String expectedDeliveryDate;
+	@JsonProperty(value="Neck measurement")
 	private String neckMeasurment;
+	@JsonProperty(value="Full chest")
 	private String fullChest;
+	@JsonProperty(value="Full shoulder width")
 	private String fullShoulderWidth;
+	@JsonProperty(value="Sleeve")
 	private String sleeve;
+	@JsonProperty(value="Bicep")
 	private String bicep;
+	@JsonProperty(value="Wrist")
 	private String wrirst;
+	@JsonProperty(value="Waist/Stomach")
 	private String waist;
+	@JsonProperty(value="Hips/ Seat")
 	private String hips;
+	@JsonProperty(value="Front jacket length")
 	private String frontJacketLength;
+	@JsonProperty(value="Front chest width")
 	private String forntChestWidth;
+	@JsonProperty(value="Back width")
 	private String backWidth;
+	@JsonProperty(value="Half shoulder width")
 	private String halfShoulderWidth;
+	@JsonProperty(value="Full back length")
 	private String fullBackLength;
+	@JsonProperty(value="Half back length")
 	private String halfBackLength;
+	@JsonProperty(value="Trouser's waist")
 	private String trousersWaist;
+	@JsonProperty(value="Trouser's outseam")
 	private String trousersOutseam;
+	@JsonProperty(value="Trouser's inseam")
 	private String trousersInseam;
+	@JsonProperty(value="Crotch measurement")
 	private String crotchMeasurment;
+	@JsonProperty(value="Thigh measurement")
 	private String thighMeasurment;
+	@JsonProperty(value="Knee measurement")
 	private String kneeMeasurment;
 
 	
@@ -161,11 +184,6 @@ public class MensTailoring extends Enquiry{
 		this.garnmentType = garnmentType;
 	}
 	
-	public String getExpectedDeliveryDate() {
-		return expectedDeliveryDate;
-	}
-	public void setExpectedDeliveryDate(String expectedDeliveryDate) {
-		this.expectedDeliveryDate = expectedDeliveryDate;
-	}
+	
 	
 }

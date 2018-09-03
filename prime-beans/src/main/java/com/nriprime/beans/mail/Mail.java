@@ -1,6 +1,5 @@
 package com.nriprime.beans.mail;
 
-import java.io.File;
 import java.util.Arrays;
 
 import org.springframework.web.multipart.MultipartFile;

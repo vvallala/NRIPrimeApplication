@@ -28,7 +28,7 @@ public class EmailContentProcessorImpl<T> implements EmailContentProcessor<T>{
 	@Override
 	public String processContent(T t) {
 		VelocityContext ctx=new VelocityContext();
-		ObjectMapper mapper=new ObjectMapper().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);;
+		ObjectMapper mapper=new ObjectMapper();
 		LinkedHashMap autoMobileMap = (LinkedHashMap) mapper.convertValue(t, LinkedHashMap.class);
 		ctx.put("person", "Vijay the great!!!");
 		ctx.put("map", autoMobileMap);

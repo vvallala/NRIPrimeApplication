@@ -106,7 +106,7 @@
 										<div class="enquiry_contact">
 											<div class="spec_instruc">
 												<span>Message</span>
-												<textarea name="specialInstructions" class="form-control tailor_instruction"></textarea>
+												<textarea name="message" class="form-control tailor_instruction"></textarea>
 											</div>
 										</div>
 									</div>

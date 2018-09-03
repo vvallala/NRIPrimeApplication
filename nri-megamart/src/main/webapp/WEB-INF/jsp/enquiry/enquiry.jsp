@@ -10,6 +10,8 @@
     <meta charset="UTF-8">
     <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//geodata.solutions/includes/countrystatecity.js"></script>
 <![endif]-->
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <title>NRI Megamart</title>
@@ -26,6 +28,8 @@
                 appendChild(msViewportStyle);
         }
     </script>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//geodata.solutions/includes/countrystatecity.js"></script>
     <script src="js/jquery-1.11.1.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
     />
@@ -448,23 +452,6 @@
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });      
-       
-        
-        $(function() {
-        	   /*  Submit form using Ajax */
-        	   $('button[type=submit]').click(function(e) {
-        		
-        	      //Prevent default submission of form
-        	     
-        	      $.post({
-        	    	 data : $('form[name=womenGarment]').serialize(),
-        	         success : function(res) {
-        	            alert("success")
-        	      }
-        	   });
-        	});
-        }
-        );
     </script>
 
 </body>

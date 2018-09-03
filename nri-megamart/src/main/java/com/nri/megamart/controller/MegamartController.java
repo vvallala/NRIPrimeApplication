@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +22,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.nri.megamart.beans.Advertisement;
 import com.nri.megamart.beans.NRIPrime;
 import com.nri.megamart.manager.FileManager;
+import com.nriprime.beans.to.UserTO;
 import com.nriprime.beans.wrappers.AdvertisementBannerWrapper;
 import com.nriprime.beans.wrappers.PrimeBannerWrapper;
+import com.sun.mail.iap.Response;
 
 @RestController
 public class MegamartController {
@@ -41,6 +44,13 @@ public class MegamartController {
 		model.addAttribute("prime", prime);
 		model.addAttribute("add", advertisement);
 		return new ModelAndView("prime");
+	}
+	
+	@GetMapping("/test")
+	public ModelAndView testPage(Model model) {
+		model.addAttribute("prime", prime);
+		model.addAttribute("add", advertisement);
+		return new ModelAndView("/enquiry/test");
 	}
 
 	@GetMapping("/register")
@@ -147,6 +157,13 @@ public class MegamartController {
 
 		return model;
 
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@PostMapping("/registerUser")
+	public ResponseEntity registerUser(UserTO user){
+		
+		return ResponseEntity.ok(user.toString());
 	}
 	
 	 	@GetMapping("/403")

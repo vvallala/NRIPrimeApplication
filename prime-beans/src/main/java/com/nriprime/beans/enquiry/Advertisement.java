@@ -1,13 +1,21 @@
 package com.nriprime.beans.enquiry;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Advertisement extends Enquiry{
 
+	@JsonProperty(value="Organisation Name")
 	private String name;
+	@JsonProperty(value="Nature Of Business")
 	private String natureOfBiz;
+	@JsonProperty(value="PickUp Date And Time")
 	private String pickUpDate;
+	@JsonProperty(value="Design")
 	private Boolean desingHelp;
+	@JsonProperty(value="Advertise At")
 	private String advertiseAt;
-	
+	@JsonProperty(value="Message")
+	private String message;
 	
 	public String getAdvertiseAt() {
 		return advertiseAt;

@@ -1,12 +1,21 @@
 package com.nriprime.beans.enquiry;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ITServices  extends Enquiry{
+	@JsonProperty(value="Organisation Name")
 	private String orgName;
+	@JsonProperty(value="Nature Of Business")
 	private String naturOfBiz;
+	@JsonProperty(value="Requirement Type")
 	private String reqType;
+	@JsonProperty(value="About Organisation")
 	private String about;
+	@JsonProperty(value="Estimated Budget")
 	private String budget;
+	@JsonProperty(value="Description")
 	private String desc;
+	@JsonProperty(value="Business Location")
 	private String location;
 	
 

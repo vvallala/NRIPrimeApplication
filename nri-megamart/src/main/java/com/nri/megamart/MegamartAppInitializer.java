@@ -4,7 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -19,7 +22,9 @@ import com.nri.megamart.security.MegaMartSecurityConfig;
 import com.nri.megamart.security.MegamartAccessDeniedHandler;
 
 @Configuration
+@EntityScan("com.nriprime.beans.*")
 public class MegamartAppInitializer {
+	Logger log=LoggerFactory.getLogger(MegamartAppInitializer.class);
 	@Autowired
 	private ApplicationProperties applicationProperties;
 
@@ -44,13 +49,15 @@ public class MegamartAppInitializer {
 
 		try {
 			File file = new File(applicationProperties.getBannerPath() + "nriprime.ser");
+			log.info("The Banner path file is $$$$$$$$$$$$$$$$$$$$$$$$"+file.getPath());
+			
 			if (file.exists() && file.length() > 0) {
 				FileInputStream fis = new FileInputStream(file);
 				ObjectInputStream objectStream = new ObjectInputStream(fis);
 				prime = (NRIPrime) objectStream.readObject();
 				objectStream.close();
 				fis.close();
-				System.out.println("object deserialized successfully");
+				log.info(" Prime banner object deserialized successfully");
 				if (null != prime) {
 					return prime;
 				} else {
@@ -58,7 +65,7 @@ public class MegamartAppInitializer {
 					fileManager().loadBannerImages(prime);
 				}
 			} else {
-				System.out.println("files does not exist loading images");
+				log.info("Prime banner file does not exist loading images");
 				prime = new NRIPrime();
 				fileManager().loadBannerImages(prime);
 			}
@@ -66,7 +73,9 @@ public class MegamartAppInitializer {
 			prime = new NRIPrime();
 			fileManager().loadBannerImages(prime);
 		} catch (Exception e) {
-
+			log.error("Exception occured during loading prime banner images",e);
+			prime = new NRIPrime();
+			fileManager().loadBannerImages(prime);
 		}
 		return prime;
 
@@ -83,7 +92,7 @@ public class MegamartAppInitializer {
 				add = (Advertisement) objectStream.readObject();
 				objectStream.close();
 				fis.close();
-				System.out.println("Advertisement object deserialized successfully");
+				log.info("Advertisement object deserialized successfully");
 				if (null != add) {
 					return add;
 				} else {
@@ -91,7 +100,7 @@ public class MegamartAppInitializer {
 					fileManager().loadAdvertisementImages(add);
 				}
 			} else {
-				System.out.println("Advertisement object does not exist loading images");
+				log.info("Advertisement object does not exist loading images");
 				add = new Advertisement();
 				fileManager().loadAdvertisementImages(add);
 			}
@@ -99,7 +108,9 @@ public class MegamartAppInitializer {
 			add = new Advertisement();
 			fileManager().loadAdvertisementImages(add);
 		} catch (Exception e) {
-			System.out.println(e);
+			add = new Advertisement();
+			fileManager().loadAdvertisementImages(add);
+			log.error("Error during loading advertisement object",e);
 		}
 		return add;
 

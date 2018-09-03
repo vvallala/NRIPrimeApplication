@@ -34,7 +34,7 @@ public class FileManager {
 				continue;
 			}
 			if (!StringUtils.isEmpty(banner.getText()) && null != file && file.getSize() > 0) {
-				System.out.println(banner.getText());
+				
 				switch (banner.getTag()) {
 				case "01":
 					prime.setGiftText(banner.getText());
@@ -62,15 +62,15 @@ public class FileManager {
 					prime.setMarketPlaceBase64(getImgAsString(file));
 					break;
 				}
-
+				try {
+					Files.write(Paths.get(applicationProperties.getBannerPath(), banner.getTag()+applicationProperties.getImageExt()), file.getBytes());
+					fileNames.add(file.getOriginalFilename() + " uploaded successfully");
+				} catch (IOException e) {
+					fileNames.add(file.getOriginalFilename() + " uploading failed!! :-( ");
+					e.printStackTrace();
+				}
 			}
-			try {
-				Files.write(Paths.get(applicationProperties.getBannerPath(), banner.getTag()+applicationProperties.getImageExt()), file.getBytes());
-				fileNames.add(file.getOriginalFilename() + " uploaded successfully");
-			} catch (IOException e) {
-				fileNames.add(file.getOriginalFilename() + " uploading failed!! :-( ");
-				e.printStackTrace();
-			}
+			
 		}
 
 		return fileNames;
@@ -104,15 +104,16 @@ public class FileManager {
 						advertisement.setAdd4Base64(getImgAsString(file));
 						break;
 					}
+					try {
+						Files.write(Paths.get(applicationProperties.getAdvertisementPath(),add.getTag()+applicationProperties.getImageExt()), file.getBytes());
+						fileNames.add(file.getOriginalFilename() + " uploaded successfully");
+					} catch (IOException e) {
+						fileNames.add(file.getOriginalFilename() + " uploading failed!! :-( ");
+						e.printStackTrace();
+					}
 
 				}
-				try {
-					Files.write(Paths.get(applicationProperties.getAdvertisementPath(),add.getTag()+applicationProperties.getImageExt()), file.getBytes());
-					fileNames.add(file.getOriginalFilename() + " uploaded successfully");
-				} catch (IOException e) {
-					fileNames.add(file.getOriginalFilename() + " uploading failed!! :-( ");
-					e.printStackTrace();
-				}
+				
 			}
 		} catch (Exception e) {
 

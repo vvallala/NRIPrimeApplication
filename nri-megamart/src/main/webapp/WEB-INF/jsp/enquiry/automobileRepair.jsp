@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 </head>
 <body>
 	<div class="modal fade" id="autorepair" role="dialog">
 		<div class="modal-dialog large_mdel">
 			<!-- Modal content-->
 			<div class="modal-content large_mdel_cntent">
-				<form action="/nriprime/enquiry/automobileRepair" method="post" name="automobileRepair" enctype="multipart/form-data" >
+				<form action="/nriprime/enquiry/automobileRepair" method="post"
+					name="automobileRepair" enctype="multipart/form-data" id="automobileRepair">
 					<button type="button" class="close popup_close"
 						data-dismiss="modal">
 						<img src="images/close.png">
@@ -54,14 +56,15 @@
 									Example Images</p>
 								<div class="tailor_group contest_upload margin_content">
 									<div class="col-xs-12 col-sm-12 ">
-										<input name="pic" id="repair" type="file"  />
+										<input name="pic" id="repair" type="file" />
 										<output id="enquiry" />
 									</div>
 								</div>
 								<div class="tailor_group tailor_padding">
 									<div class="col-xs-12 col-sm-6">
 										<p>Please select service</p>
-										<select name="serviceType" class="garment_selection" onchange="gender(this);">
+										<select name="serviceType" class="garment_selection"
+											onchange="gender(this);">
 											<option>Service Type</option>
 											<option>General Service</option>
 											<option id="otherrelation">Specific Repair/Service</option>
@@ -82,13 +85,15 @@
 										style="margin-left: 15px; margin-right: 15px; border-top: 1px solid rgba(0, 0, 0, 0.2); margin-top: 0px;">
 									<div class="col-xs-12 col-sm-6">
 										<div class="enquiry_contact">
-											<input name="personName" class="form-control contact_prsn_name" type="text"
+											<input name="personName"
+												class="form-control contact_prsn_name" type="text"
 												placeholder="Contact Person Name">
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6">
 										<div class="enquiry_phone">
-											<input name="phoneNumber" class="form-control contact_prsn_name" type="text"
+											<input name="phoneNumber"
+												class="form-control contact_prsn_name" type="text"
 												placeholder="Phone Number">
 										</div>
 									</div>
@@ -96,7 +101,8 @@
 								<div class="tailor_group tailor_padding">
 									<div class="col-xs-12 col-sm-12">
 										<div class="enquiry_email">
-											<input name="emailAddress" class="form-control contact_prsn_name" type="text"
+											<input name="emailAddress"
+												class="form-control contact_prsn_name" type="text"
 												placeholder="Email Address">
 										</div>
 									</div>
@@ -105,7 +111,8 @@
 									<div class="col-xs-12 col-sm-6">
 										<div class="spec_instruc">
 											<span>Special Instructions</span>
-											<textarea name="specialInstructions" class="form-control tailor_instruction"></textarea>
+											<textarea name="specialInstructions"
+												class="form-control tailor_instruction"></textarea>
 										</div>
 									</div>
 									<div class="col-xs-12 col-sm-6">
@@ -129,7 +136,7 @@
 										class="fa fa-angle-left fa-icon arrow_icon"></span>Back To
 										Enquiry Home Page</a> <img src="images/captcha.png"
 										style="position: relative; top: 0px; left: 80px;">
-									<button type="submit" class="btn cart-mre enquiry_btn">Save
+									<button type="submit" name="repairButton" class="btn cart-mre enquiry_btn">Save
 										&amp; Continue</button>
 								</div>
 							</div>

@@ -1190,7 +1190,7 @@
                                         <div class="col-sm-8">
                                             <div class="new-user">
                                                 <span>
-                                                    <a href="register.html">New User ?</a>
+                                                    <a href="nriprime/register">New User ?</a>
                                                 </span>
                                                 <span>
                                                     <a href="#">Forgot Password ?</a>

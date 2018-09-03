@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.nriprime.beans.auth.User;
 
-@Repository("userRepository")
+@Repository(value="userRepository")
 public interface UserRepository extends JpaRepository<User, Long> {
-	public User findByUserName(String userName);
+	public User findByEmail(String userName);
+	
 }

@@ -230,7 +230,13 @@
                                                 <textarea class="form-control tailor_instruction" name="womenGarmentSpecialInstructions"></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-6">
+                                          <div class="col-xs-12 col-sm-6">
+                                            <div class="spec_instruc">
+                                                <span>Delivery Address</span>
+                                                <textarea class="form-control tailor_instruction" name="address"></textarea>
+                                            </div>
+                                        </div>
+                                       <!--  <div class="col-xs-12 col-sm-6">
                                             <div class="edit_del_address">
                                                 <p class="pickup_enquiry_addr">Delivery Address</p>
                                                 <div class="delivery_addr_detail enquiry_delivery_addr">
@@ -241,7 +247,7 @@
                                                     <span class="delivery_address">Hyderabad, 5000032</span>
                                                 </div>
                                             </div>
-                                        </div>                                       										
+                                        </div>            -->                            										
                                     </div>
 									<div class="col-xs-12 col-sm-12">
 										<a href="/nriprime/enquiry" class="link_direction"><span class="fa fa-angle-left fa-icon arrow_icon"></span>Back To Enquiry Home Page</a>

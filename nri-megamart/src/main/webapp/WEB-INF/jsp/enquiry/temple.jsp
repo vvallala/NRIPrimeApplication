@@ -3,6 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
@@ -30,8 +32,8 @@
 										<div class="col-xs-12 col-sm-6">
 											<div class="general_inche">
 											<p>Country</p>
-												<select name="country" class="courier_enquiry" onchange="gender(this);">
-													<option></option>
+												<select name="country" class="countries" id="countryId" onchange="gender(this);">
+													<option value="">Select Country</option>
 												</select>
 											</div>
 										</div>
