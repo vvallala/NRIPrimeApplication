@@ -25,7 +25,7 @@ prime.image.ext= .jpg
 prime.enquiry.template.path=./src/main/resources/static/templates/
 prime.enquiry.template.name=enquiry.html
 
-spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+#spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 
 
 spring.datasource.url = jdbc:mysql://localhost:3306/nriprime

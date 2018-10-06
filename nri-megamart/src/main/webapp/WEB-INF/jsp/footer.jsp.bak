@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	
+	<%@page import="com.nri.megamart.datastore.FooterDataStore"%>
+	<%@page import="java.util.List"%>
+	<%@page import="com.nriprime.beans.to.CodeTO"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head></head>
@@ -25,10 +29,13 @@
 							<div class="footer-links">
 								<p>Your Accounts</p>
 								<ul>
-									<li><a href="privacypolicy.html">Privacy Policy</a></li>
-									<li><a href="deliverypolicy.html">Delivery Policy</a></li>
-									<li><a href="shippingpolicy.html">Shipping policy</a></li>
-									<li><a href="refundreturn.html">Refunds & Returns</a></li>
+									<%
+									List<CodeTO> codes= FooterDataStore.getYourAccounts();
+									pageContext.setAttribute("accounts",codes);
+									%>
+									<c:forEach var="code" items="${accounts}">
+									<li><a href="${code.codeValue}">${code.codeDesc}</a></li>
+									</c:forEach>
 								</ul>
 							</div>
 
