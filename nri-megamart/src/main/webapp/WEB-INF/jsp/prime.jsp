@@ -74,9 +74,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-green m--active-slide">
         <div class="fnc-slide__inner fnc-slide-1">
             <img src="data:image/jpg;base64,${prime.gitFileBase64}">
-          <div class="fnc-slide__mask">
-           <div class="fnc-slide__mask-inner fnc-slide-1"><img src="data:image/jpg;base64,${prime.gitFileBase64}"></div> 
-          </div>
+        
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -84,10 +82,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
              
             </h2>
-            <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+           
           </div>
         </div>
       </div>
@@ -96,11 +91,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-dark">
         <div class="fnc-slide__inner fnc-slide-2">
             <img src="data:image/jpg;base64,${prime.travelAndCourierBase64}">
-          <div class="fnc-slide__mask">
-            <div class="fnc-slide__mask-inner fnc-slide-2">
-			<img src="data:image/jpg;base64,${prime.travelAndCourierBase64}">
-			</div>
-          </div>
+         
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -108,10 +99,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
             
             </h2>
-            <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+         
           </div>
         </div>
       </div>
@@ -120,11 +108,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-red">
         <div class="fnc-slide__inner fnc-slide-3">
             <img src="data:image/jpg;base64,${prime.jewelleryBase64}">
-          <div class="fnc-slide__mask">
-            <div class="fnc-slide__mask-inner fnc-slide-3">
-			<img src="data:image/jpg;base64,${prime.jewelleryBase64}">
-			</div>
-          </div>
+         
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -132,10 +116,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
              
             </h2>
-            <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+            
           </div>
         </div>
       </div>
@@ -144,9 +125,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-dark">
         <div class="fnc-slide__inner fnc-slide-4">
             <img src="data:image/jpg;base64,${prime.eventsBase64}">
-          <div class="fnc-slide__mask">
-            <div class="fnc-slide__mask-inner"></div>
-          </div>
+          
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -154,10 +133,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
              
             </h2>
-            <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+       
           </div>
         </div>
       </div>
@@ -166,11 +142,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-blue">
         <div class="fnc-slide__inner fnc-slide-5">
             <img src="data:image/jpg;base64,${prime.printingBase64}">
-          <div class="fnc-slide__mask">
-           <div class="fnc-slide__mask-inner fnc-slide-5">
-		   <img src="data:image/jpg;base64,${prime.printingBase64}">
-		   </div>
-          </div>
+          
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -178,10 +150,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
              
             </h2>
-            <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+           
           </div>
         </div>
       </div>
@@ -190,11 +159,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       <div class="fnc-slide m--blend-red">
         <div class="fnc-slide__inner fnc-slide-6">
           <img src="data:image/jpg;base64,${prime.marketPlaceBase64}">
-		  <div class="fnc-slide__mask">
-            <div class="fnc-slide__mask-inner fnc-slide-6">
-			<img src="data:image/jpg;base64,${prime.marketPlaceBase64}">
-			</div>
-          </div>
+		
           <div class="fnc-slide__content">
             <h2 class="fnc-slide__heading">
               <div class="fnc-slide__heading-line">
@@ -202,10 +167,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
               </div>
              
             </h2>
-             <button type="button" class="fnc-slide__action-btn">
-              More About NRI Prime <i class="fa fa-angle-right"></i>
-              <span data-text="Click for more">More About NRI Prime <i class="fa fa-angle-right"></i></span>
-            </button>
+          
           </div>
         </div>
       </div>
@@ -250,30 +212,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
       </div>
     </nav>
   </div>
-  <!-- slider end -->
-  <div class="demo-cont__credits">
-    <div class="demo-cont__credits-close"></div>
-    <h2 class="demo-cont__credits-heading demo_margin">NRI Prime.com</h2>
-    <p>& It's done, Always Better</p>
-    <ul>
-        <li><a href="#"> Link 1  </a></li>
-		 <li><a href="#"> Link 2  </a></li>
-		  <li><a href="#"> Link 3  </a></li>
-		   <li><a href="#"> Link 4  </a></li>
-		    <li><a href="#"> Link 5  </a></li>
-			 <li><a href="#"> Link 7  </a></li>
-			  <li><a href="#"> Link 8  </a></li>
-			   <li><a href="#"> Link 9  </a></li>
-				 <li><a href="#"> Link 10  </a></li>
-				  <li><a href="#"> Link 11  </a></li>
-				   <li><a href="#"> Link 12  </a></li>
-					<li><a href="#"> Link 13  </a></li>
-					 <li><a href="#"> Link 14  </a></li>
-					  <li><a href="#"> Link 15  </a></li>
-    </ul>   
- 
-   
-  </div>
+
 </div>
        
  </div>
