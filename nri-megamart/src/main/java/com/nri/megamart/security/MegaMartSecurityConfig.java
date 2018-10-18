@@ -17,7 +17,7 @@ public class MegaMartSecurityConfig  extends WebSecurityConfigurerAdapter {
 	 @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 
-	    	http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers("/register").permitAll().antMatchers("/enquiry**").permitAll().antMatchers("/enquiry/**").permitAll().antMatchers("/admin/**").hasAnyRole("ADMIN").anyRequest().authenticated()
+	    	http.csrf().disable().authorizeRequests().antMatchers("/**").permitAll().antMatchers("/register").permitAll().antMatchers("/enquiry**").permitAll().antMatchers("/enquiry/**").permitAll().antMatchers("/admin/**").hasAnyRole("ADMIN").anyRequest().authenticated()
 	        .and().formLogin().loginPage("/login").permitAll().and().logout().permitAll()
 			.and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 	    }

@@ -21,7 +21,7 @@
 <div>
 <input type="button" value="Logout" onclick="document.forms['logoutForm'].submit()"/>
 </div>
-</form:form>
+
     <form id="logoutForm" method="POST" action="/nriprime/logout">
     </form>
 

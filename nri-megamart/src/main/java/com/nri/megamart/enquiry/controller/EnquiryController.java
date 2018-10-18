@@ -17,6 +17,7 @@ import com.nriprime.beans.enquiry.Advertisement;
 import com.nriprime.beans.enquiry.Automobile;
 import com.nriprime.beans.enquiry.AutomobileRepair;
 import com.nriprime.beans.enquiry.BulkProduct;
+import com.nriprime.beans.enquiry.BusinessCard;
 import com.nriprime.beans.enquiry.CorporatePurchase;
 import com.nriprime.beans.enquiry.CustomProduct;
 import com.nriprime.beans.enquiry.EventMangement;
@@ -413,7 +414,21 @@ public class EnquiryController {
 		return new RedirectView("/nriprime/enquiry");
 
 	}
+	@SuppressWarnings({ "unchecked"})
+	@PostMapping("/businessCard")
+	public RedirectView businessCard(BusinessCard card) {
+		logger.info("processing businessCard enquiry request  " + card);
+		Mail mail = getMail("Airline Enquiiry", card.getEmail());
+		card.setAddress(getAddress(card.getAddress()));
+		card.setPickupAddress(getAddress(card.getPickupAddress()));
+		card.setBackAddress(getAddress(card.getBackAddress()));
+		card.setBcakPickupAddress(getAddress(card.getBcakPickupAddress()));
+		mail.setText(emailContentProcessor.processContent(card));
+		mail.setAttachment(card.getLogo());
+		primeMailService.sendMail(mail);
+		return new RedirectView("/nriprime/enquiry");
 
+	}
 	private Mail getMail(String subject, String emailAddress) {
 		Mail mail = new Mail();
 		mail.setTo(emailProps.getTo());
